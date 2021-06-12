@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             when {
-                buildTags()
+                buildingTag()
             }
             steps {
                 echo 'Testing..'
