@@ -4,10 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building.. ${TAG_NAME}'
             }
         }
         stage('Test') {
+            when {
+                buildTags()
+            }
             steps {
                 echo 'Testing..'
             }
